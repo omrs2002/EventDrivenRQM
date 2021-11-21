@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{4AD11FD8-ABAF-4DA6-A88E-7936D5749447}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{4AD11FD8-ABAF-4DA6-A88E-7936D5749447}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostService", "PostService\PostService.csproj", "{BC0015E9-C217-4049-8AD7-265F658E0E76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostService", "PostService\PostService.csproj", "{BC0015E9-C217-4049-8AD7-265F658E0E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDrivenRQM.Shared", "EventDrivenRQM.Shared\EventDrivenRQM.Shared.csproj", "{BD25C70E-BD5C-45FD-BEBF-81D7541A2E96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BC0015E9-C217-4049-8AD7-265F658E0E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC0015E9-C217-4049-8AD7-265F658E0E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC0015E9-C217-4049-8AD7-265F658E0E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD25C70E-BD5C-45FD-BEBF-81D7541A2E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD25C70E-BD5C-45FD-BEBF-81D7541A2E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD25C70E-BD5C-45FD-BEBF-81D7541A2E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD25C70E-BD5C-45FD-BEBF-81D7541A2E96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

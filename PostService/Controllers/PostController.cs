@@ -12,11 +12,17 @@ namespace PostService.Controllers
     public class PostController : ControllerBase
     {
         private readonly PostServiceContext _context;
+        private readonly IConfiguration configuration;
 
-        public PostController(PostServiceContext context)
+
+        public PostController(PostServiceContext context,
+            IConfiguration iConfig
+            )
         {
             _context = context;
+            configuration = iConfig;
         }
+
 
         [Route("GetPost")]
         [HttpGet]

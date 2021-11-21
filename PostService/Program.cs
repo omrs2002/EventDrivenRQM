@@ -1,6 +1,8 @@
+using EventDrivenRQM.Shared;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 using PostService.Data;
 using PostService.Entities;
@@ -14,15 +16,30 @@ namespace PostService
 {
     public class Program
     {
-        public static void Main(string[] args)
+         //public static IOptions<RabitMQSettings> _appSettings;
+
+        public static void Main
+            (
+            string[] args//,            IOptions<RabitMQSettings> appSettings
+            )
         {
+            //_appSettings = appSettings;
             ListenForIntegrationEvents();
             CreateHostBuilder(args).Build().Run();
         }
 
         private static void ListenForIntegrationEvents()
         {
-            var factory = new ConnectionFactory();
+
+            //var factory = new ConnectionFactory()
+            //{
+            //    HostName = _appSettings.Value.HostName,
+            //    UserName = _appSettings.Value.UserName,
+            //    Password = _appSettings.Value.Password
+            //};
+
+
+            var factory = new ConnectionFactory() { HostName = "localhost" };
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             var consumer = new EventingBasicConsumer(channel);
