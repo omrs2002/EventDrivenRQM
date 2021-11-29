@@ -16,7 +16,7 @@ namespace PostService
 {
     public class Program
     {
-         //public static IOptions<RabitMQSettings> _appSettings;
+        //public static IOptions<RabitMQSettings> _appSettings;
 
         public static void Main
             (
@@ -31,15 +31,19 @@ namespace PostService
         private static void ListenForIntegrationEvents()
         {
 
-            //var factory = new ConnectionFactory()
+            //var factory = new connectionfactory()
             //{
-            //    HostName = _appSettings.Value.HostName,
-            //    UserName = _appSettings.Value.UserName,
-            //    Password = _appSettings.Value.Password
+            //    hostname = _appsettings.value.hostname,
+            //    username = _appsettings.value.username,
+            //    password = _appsettings.value.password
             //};
 
-
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory()
+            {
+                UserName = "guest",
+                HostName = "localhost",
+                Password = "guest"
+            };
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             var consumer = new EventingBasicConsumer(channel);
@@ -73,9 +77,9 @@ namespace PostService
                     dbContext.SaveChanges();
                 }
             };
-            channel.BasicConsume(queue: "user.postservice",
-                                     autoAck: true,
-                                     consumer: consumer);
+
+            channel.BasicConsume(queue: "user.postservice", autoAck: true, consumer: consumer);
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
